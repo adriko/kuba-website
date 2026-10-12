@@ -1,61 +1,50 @@
 ---
 ---
-<section class="relative overflow-hidden bg-zinc-950 text-white pt-10 pb-16 md:pt-16 md:pb-24 border-b border-zinc-850">
+<section class="relative overflow-hidden bg-slate-50 text-slate-900 pt-10 pb-16 md:pt-16 md:pb-24 border-b border-slate-200/80">
   
-  <!-- Techniczna siatka milimetrowa w tle (Mathematical Grid) -->
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none"></div>
+  <!-- Subtelna siatka punktowa (Zeszyt w kropki / matematyczna precyzja) -->
+  <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:20px_20px] opacity-70 pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
       
       <!-- Lewa kolumna: Treść -->
       <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
         
-        <!-- Status / Etykieta -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>Przygotowanie do matury • Zapisy bezpośrednie</span>
+        <!-- Badge zaufania -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-medium shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Przygotowanie do matury CKE • Zapisy bezpośrednie</span>
         </div>
 
-        <!-- Nagłówek: Czysty, bez zbędnych kolorowych gradientów -->
-        <h1 class="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+        <!-- Główny nagłówek z mocną typografią -->
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.15]">
           Zrozum matematykę i fizykę. <br />
-          <span class="text-zinc-400 font-normal">Bez stresu, na Lekcjach u Kuby.</span>
+          <span class="text-indigo-600">Bez stresu, na Lekcjach u Kuby.</span>
         </h1>
 
-        <p class="text-base text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-          Cześć, jestem Jakub. Uczę logicznego myślenia zamiast bezmyślnego wkuwania wzorów. Rozkładam trudne zagadnienia na przejrzyste kroki.
+        <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+          Cześć, jestem Jakub. Pomagam opanować materiał bez wkuwania schematów na pamięć. Uczę logicznego myślenia i rozbijam skomplikowane zadania na proste etapy.
         </p>
 
-        <!-- Pigułki informacyjne: Spójny, techniczny styl -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 font-mono text-xs">
-          <span class="px-3 py-1 rounded-md bg-zinc-900/90 border border-zinc-800 text-zinc-300">
-            [ Online: cała Polska ]
+        <!-- Wyraźne, czyste znaczniki formy zajęć -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 text-xs font-semibold">
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200/90 text-slate-700 shadow-xs flex items-center gap-1.5">
+            <span class="text-indigo-600 font-bold">●</span> Online (cała Polska)
           </span>
-          <span class="px-3 py-1 rounded-md bg-zinc-900/90 border border-zinc-800 text-zinc-300">
-            [ Stacjonarnie ]
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200/90 text-slate-700 shadow-xs flex items-center gap-1.5">
+            <span class="text-indigo-600 font-bold">●</span> Stacjonarnie
           </span>
-          <span class="px-3 py-1 rounded-md bg-zinc-900/90 border border-zinc-800 text-zinc-300">
-            [ Notatki PDF ]
+          <span class="px-3 py-1.5 rounded-lg bg-white border border-slate-200/90 text-slate-700 shadow-xs flex items-center gap-1.5">
+            <span class="text-indigo-600 font-bold">●</span> Notatki PDF po lekcji
           </span>
         </div>
 
-        <!-- Baner darmowej wiedzy YT: Elegancki, ciemny panel -->
-        <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-start sm:items-center gap-3.5 text-left max-w-xl mx-auto lg:mx-0">
-          <div class="w-8 h-8 rounded-lg bg-zinc-800 text-zinc-300 flex items-center justify-center shrink-0">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </div>
-          <div class="text-xs">
-            <span class="font-semibold text-white block">Darmowe materiały i arkusze na YouTube</span>
-            <span class="text-zinc-400">Rozwiązania zadań krok po kroku oraz metodyka egzaminacyjna.</span>
-          </div>
-        </div>
-
-        <!-- Przyciski akcji: Minimalistyczny duet -->
-        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+        <!-- Przyciski akcji: Czytelny kontrast -->
+        <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
           <a 
             href="#kontakt" 
-            class="w-full sm:w-auto px-6 py-3 bg-white text-zinc-950 hover:bg-zinc-200 font-semibold text-sm rounded-lg transition-colors text-center"
+            class="w-full sm:w-auto px-7 py-3.5 bg-slate-900 hover:bg-indigo-600 text-white font-bold text-sm rounded-xl transition-all text-center shadow-md shadow-slate-900/10"
           >
             Sprawdź wolne terminy
           </a>
@@ -63,61 +52,62 @@
             href="https://www.youtube.com/@lekcjeukuby" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="w-full sm:w-auto px-6 py-3 bg-zinc-900 hover:bg-zinc-850 text-zinc-200 hover:text-white font-semibold text-sm border border-zinc-800 rounded-lg transition-colors text-center"
+            class="w-full sm:w-auto px-7 py-3.5 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-200/90 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-xs"
           >
-            Kanał YouTube
+            <svg class="w-4 h-4 text-red-600 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Materiały na YouTube
           </a>
         </div>
 
-        <!-- Liczby: Czyste proporcje -->
-        <div class="pt-6 border-t border-zinc-800/80 grid grid-cols-2 gap-6 max-w-sm mx-auto lg:mx-0">
+        <!-- Liczby zaufania -->
+        <div class="pt-6 border-t border-slate-200/80 grid grid-cols-2 gap-6 max-w-sm mx-auto lg:mx-0">
           <div>
-            <div class="text-2xl font-bold font-mono text-white">5+ lat</div>
-            <div class="text-xs text-zinc-400 mt-0.5">doświadczenia</div>
+            <div class="text-3xl font-extrabold text-slate-950">5+ lat</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">doświadczenia w nauczaniu</div>
           </div>
           <div>
-            <div class="text-2xl font-bold font-mono text-white">>90%</div>
-            <div class="text-xs text-zinc-400 mt-0.5">zdawalność matur</div>
+            <div class="text-3xl font-extrabold text-indigo-600">>90%</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">zdawalność maturzystów</div>
           </div>
         </div>
 
       </div>
 
-      <!-- Prawa kolumna: Zdjęcie Kuby i ujednolicony panel -->
+      <!-- Prawa kolumna: Profesjonalna, elegancka karta Jakuba -->
       <div class="lg:col-span-5 flex justify-center">
-        <div class="w-full max-w-sm bg-zinc-900 border border-zinc-800 rounded-2xl p-4 shadow-xl">
+        <div class="w-full max-w-sm bg-white border border-slate-200/80 rounded-3xl p-4 shadow-xl shadow-slate-200/50">
           
-          <!-- Zdjęcie -->
-          <div class="relative rounded-xl overflow-hidden aspect-4/5 bg-zinc-950 border border-zinc-800/80">
+          <!-- Zdjęcie Kuby -->
+          <div class="relative rounded-2xl overflow-hidden aspect-4/5 bg-slate-100 border border-slate-100">
             <img 
               src="/kuba.png" 
-              alt="Jakub Korzeń - Lekcje u Kuby" 
+              alt="Jakub Korzeń - Korepetytor" 
               class="w-full h-full object-cover object-top"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             
-            <div class="absolute bottom-4 left-4 right-4">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block">Nauczyciel & Trener</span>
-              <span class="text-xl font-bold text-white">Jakub Korzeń</span>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-200 block">Nauczyciel & Twórca</span>
+              <span class="text-2xl font-extrabold">Jakub Korzeń</span>
             </div>
           </div>
 
-          <!-- UJEDNOLICONY PANEL: Ten sam, elegancki styl dla wszystkich kafelków -->
-          <div class="mt-3 space-y-2">
-            <div class="grid grid-cols-2 gap-2 text-center font-mono">
-              <div class="py-2.5 px-2 rounded-lg bg-zinc-950 border border-zinc-800">
-                <div class="text-white font-bold text-xs">Matematyka</div>
-                <div class="text-[11px] text-zinc-400 mt-0.5">80% zajęć</div>
+          <!-- Kafelki pod zdjęciem: Eleganckie, czyste, jasne -->
+          <div class="mt-3.5 space-y-2">
+            <div class="grid grid-cols-2 gap-2 text-center">
+              <div class="py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                <div class="text-slate-900 font-extrabold text-sm">∑ Matematyka</div>
+                <div class="text-[11px] text-slate-500 font-medium">80% zajęć</div>
               </div>
 
-              <div class="py-2.5 px-2 rounded-lg bg-zinc-950 border border-zinc-800">
-                <div class="text-white font-bold text-xs">Fizyka</div>
-                <div class="text-[11px] text-zinc-400 mt-0.5">20% zajęć</div>
+              <div class="py-2.5 px-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                <div class="text-slate-900 font-extrabold text-sm">⚡ Fizyka</div>
+                <div class="text-[11px] text-slate-500 font-medium">20% zajęć</div>
               </div>
             </div>
 
-            <div class="py-2 px-3 rounded-lg bg-zinc-950 border border-zinc-800 text-center text-xs text-zinc-300 font-mono">
-              Matura CKE • Egzamin Ósmoklasisty
+            <div class="py-2.5 px-4 rounded-xl bg-indigo-50/70 border border-indigo-100 text-center text-xs text-indigo-900 font-semibold">
+              🎯 Matura CKE • Egzamin Ósmoklasisty
             </div>
           </div>
 
