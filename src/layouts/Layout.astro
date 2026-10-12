@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="pl" class="scroll-smooth">
+<html lang="pl" class="scroll-smooth bg-[#08070b]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,15 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-600 selection:text-white">
-    <slot />
+  <body class="bg-[#08070b] text-zinc-100 antialiased selection:bg-violet-500 selection:text-white min-h-screen relative overflow-x-hidden">
+    <!-- Tło ze sferycznym światłem w stylu Darkrise -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-violet-600/15 via-indigo-600/10 to-transparent blur-[120px]"></div>
+      <div class="absolute top-[800px] -left-40 w-[500px] h-[500px] bg-purple-600/10 blur-[140px]"></div>
+    </div>
+
+    <div class="relative z-10">
+      <slot />
+    </div>
   </body>
 </html>
