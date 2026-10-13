@@ -1,11 +1,11 @@
 ---
 ---
 <!-- Główna belka nawigacji -->
-<header class="sticky top-0 z-50 bg-[#08070b]/80 backdrop-blur-xl border-b border-white/[0.08]">
+<header class="sticky top-0 z-50 bg-[#08070b]/90 backdrop-blur-xl border-b border-white/[0.08]">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     
-    <!-- Logo JK z fioletowym akcentem Darkrise -->
-    <a href="#" class="flex items-center gap-3 group">
+    <!-- Logo JK z fioletowym akcentem -->
+    <a href="#" class="flex items-center gap-3 group z-50">
       <div class="relative">
         <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
         <span class="relative w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 text-white font-extrabold flex items-center justify-center text-sm shadow-sm">
@@ -18,47 +18,103 @@
       </div>
     </a>
 
-    <!-- Zmodernizowane menu nawigacji nawiązujące do odcienia Zapisz się -->
+    <!-- Menu dla komputerów (desktop) -->
     <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
-      <a 
-        href="#o-mnie" 
-        class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group"
-      >
+      <a href="#o-mnie" class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group">
         O mnie
         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
       </a>
-
-      <a 
-        href="#oferta" 
-        class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group"
-      >
+      <a href="#oferta" class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group">
         Oferta
         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
       </a>
-
-      <a 
-        href="#materialy" 
-        class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group"
-      >
+      <a href="#materialy" class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group">
         Społeczność
         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
       </a>
-
-      <a 
-        href="#kontakt" 
-        class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group"
-      >
+      <a href="#kontakt" class="text-violet-200/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(167,139,250,0.5)] transition-all duration-200 relative py-1 group">
         Kontakt
         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-violet-500 to-indigo-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
       </a>
     </nav>
 
-    <!-- Przycisk Zapisz się -->
-    <a 
-      href="#kontakt" 
-      class="px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-xl transition-all shadow-lg shadow-violet-600/25 hover:shadow-violet-600/40"
-    >
-      Zapisz się
+    <div class="flex items-center gap-3">
+      <!-- Przycisk Zapisz się -->
+      <a 
+        href="#kontakt" 
+        class="px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-xl transition-all shadow-lg shadow-violet-600/25 hover:shadow-violet-600/40"
+      >
+        Zapisz się
+      </a>
+
+      <!-- Przycisk Hamburger na telefony -->
+      <button 
+        id="menu-toggle" 
+        aria-label="Otwórz menu" 
+        class="md:hidden p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-zinc-300 hover:text-white focus:outline-none z-50"
+      >
+        <svg id="icon-open" class="w-5 h-5 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Rozwijana belka / overlay mobilny -->
+  <div 
+    id="mobile-menu" 
+    class="hidden fixed inset-x-0 top-16 bg-[#08070b]/95 backdrop-blur-2xl border-b border-white/[0.08] p-6 flex-col gap-5 md:hidden shadow-2xl transition-all duration-300"
+  >
+    <a href="#o-mnie" class="mobile-nav-link text-base font-semibold text-violet-200/90 hover:text-white py-2 border-b border-white/[0.04]">
+      O mnie
+    </a>
+    <a href="#oferta" class="mobile-nav-link text-base font-semibold text-violet-200/90 hover:text-white py-2 border-b border-white/[0.04]">
+      Oferta
+    </a>
+    <a href="#materialy" class="mobile-nav-link text-base font-semibold text-violet-200/90 hover:text-white py-2 border-b border-white/[0.04]">
+      Społeczność
+    </a>
+    <a href="#kontakt" class="mobile-nav-link text-base font-semibold text-violet-200/90 hover:text-white py-2">
+      Kontakt
     </a>
   </div>
 </header>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  const toggleMenu = () => {
+    const isOpen = mobileMenu?.classList.contains('flex');
+    if (isOpen) {
+      mobileMenu?.classList.remove('flex');
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      mobileMenu?.classList.add('flex');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+    }
+  };
+
+  toggleBtn?.addEventListener('click', toggleMenu);
+
+  // Zamknij menu po kliknięciu w dowolny odnośnik
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.remove('flex');
+      mobileMenu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>
