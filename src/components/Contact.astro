@@ -25,16 +25,36 @@
         </p>
 
         <div class="pt-4 grid sm:grid-cols-2 gap-4">
-          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.06]">
-            <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Kontakt bezpośredni</span>
-            <span class="font-bold text-lg text-white block">Napisz lub zadzwoń</span>
-            <span class="text-xs text-violet-400 mt-1 block font-mono">kontakt@jakubkorzen.pl</span>
+          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.06] flex flex-col justify-between">
+            <div>
+              <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Kontakt bezpośredni</span>
+              <span class="font-bold text-lg text-white block">Napisz lub zadzwoń</span>
+              <span class="text-xs text-violet-400 mt-1 block font-mono">kontakt@jakubkorzen.pl</span>
+            </div>
+            <!-- Przycisk szybkiego kontaktu (np. WhatsApp / Telefon) -->
+            <div class="mt-4">
+              <a 
+                href="https://wa.me/48510170804" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-xs font-bold transition-all"
+              >
+                <span>💬 Napisz na WhatsApp</span>
+              </a>
+            </div>
           </div>
 
-          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.06]">
-            <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Forma zajęć</span>
-            <span class="font-bold text-lg text-white block">Online & Stacjonarnie</span>
-            <span class="text-xs text-zinc-300 mt-1 block">Interaktywna tablica • Notatki PDF</span>
+          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.06] flex flex-col justify-between">
+            <div>
+              <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Forma zajęć</span>
+              <span class="font-bold text-lg text-white block">Online & Stacjonarnie</span>
+              <span class="text-xs text-zinc-300 mt-1 block">Interaktywna tablica • Notatki PDF</span>
+            </div>
+            <div class="mt-4">
+              <div class="px-4 py-2.5 rounded-xl bg-white/[0.04] text-zinc-300 border border-white/[0.06] text-xs font-semibold text-center">
+                Sprawdź wolne terminy ↗
+              </div>
+            </div>
           </div>
         </div>
       </div>

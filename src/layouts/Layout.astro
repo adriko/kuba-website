@@ -4,11 +4,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
 const { 
   title, 
-  description = "Korepetycje z matematyki i fizyki - Jakub Korzeń. Skuteczne przygotowanie do matury i egzaminów." 
+  description = "Korepetycje z matematyki i fizyki - Jakub Korzeń. Skuteczne przygotowanie do matury i egzaminów.",
+  image = "/kuba.png" 
 } = Astro.props;
 ---
 
@@ -20,6 +22,13 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    
+    <!-- Open Graph / Social Media Meta Tagi -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +76,7 @@ const {
     background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(167, 139, 250, 0.18), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none;
+    pointer-events-none;
     z-index: 1;
   }
   .bento-card:hover::before {
