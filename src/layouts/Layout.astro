@@ -1,17 +1,47 @@
 ---
+import '@fontsource-variable/plus-jakarta-sans';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
-  image?: string;
+  canonicalURL?: string;
 }
 
 const { 
   title, 
-  description = "Korepetycje z matematyki i fizyki - Jakub Korzeń. Skuteczne przygotowanie do matury i egzaminów.",
-  image = "/kuba.png" 
+  description = "Korepetycje z matematyki i fizyki – Jakub Korzeń (Lekcje u Kuby). Skuteczne przygotowanie do matury CKE i egzaminu ósmoklasisty. Zajęcia online oraz stacjonarnie.",
+  canonicalURL = "https://jakubkorzen.pl"
 } = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Jakub Korzeń – Lekcje u Kuby",
+  "url": canonicalURL,
+  "logo": `${canonicalURL}/favicon.svg`,
+  "image": `${canonicalURL}/kuba.png`,
+  "description": description,
+  "sameAs": [
+    "https://www.youtube.com/@lekcjeukuby",
+    "https://maps.app.goo.gl/bdKPyWNdRER2nRZ26"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Jakub Korzeń",
+    "jobTitle": "Nauczyciel i Korepetytor Matematyki oraz Fizyki"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "ratingCount": "28"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Polska"
+  }
+};
 ---
 
 <!doctype html>
@@ -20,21 +50,30 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    
-    <!-- Open Graph / Social Media Meta Tagi -->
+    <meta name="theme-color" content="#08070b" />
+    <title>{title}</title>
+
+    <!-- Open Graph / Discord / Facebook / Messenger -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`${canonicalURL}/kuba.png`} />
+    <meta property="og:locale" content="pl_PL" />
 
-    <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${canonicalURL}/kuba.png`} />
+
+    <!-- Dane strukturalne JSON-LD dla Google i AI Search -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
-  <body class="bg-[#08070b] text-zinc-100 antialiased selection:bg-violet-500 selection:text-white min-h-screen relative overflow-x-hidden">
+  <body class="bg-[#08070b] text-zinc-100 antialiased selection:bg-violet-500 selection:text-white min-h-screen relative overflow-x-hidden pb-20 md:pb-0">
     <!-- Tło ze sferycznym światłem w stylu Darkrise -->
     <div class="fixed inset-0 pointer-events-none z-0">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-violet-600/15 via-indigo-600/10 to-transparent blur-[120px]"></div>
@@ -45,41 +84,20 @@ const {
       <slot />
     </div>
 
-    <!-- Skrypt interaktywnego podświetlenia kart myszką (Spotlight) -->
+    <!-- Zoptymalizowany skrypt Spotlight (tylko dla wskazywanej karty i urządzeń z myszką) -->
     <script>
-      const updateMousePosition = (e: MouseEvent) => {
-        const cards = document.querySelectorAll('.bento-card');
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cards = document.querySelectorAll<HTMLElement>('.bento-card');
         cards.forEach((card) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-          (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+          card.addEventListener('pointermove', (e: PointerEvent) => {
+            requestAnimationFrame(() => {
+              const rect = card.getBoundingClientRect();
+              card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+              card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+          });
         });
-      };
-      window.addEventListener('mousemove', updateMousePosition);
+      }
     </script>
   </body>
 </html>
-
-<style is:global>
-  /* Kursorowy Spotlight Glow na kartach Bento */
-  .bento-card {
-    position: relative;
-    overflow: hidden;
-  }
-  .bento-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(167, 139, 250, 0.18), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .bento-card:hover::before {
-    opacity: 1;
-  }
-</style>

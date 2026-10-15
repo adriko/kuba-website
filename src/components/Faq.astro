@@ -1,0 +1,45 @@
+---
+const faqs = [
+  {
+    question: "Jak wyglądają zajęcia online i czy są tak samo skuteczne jak na żywo?",
+    answer: "Zajęcia zdalne prowadzę z użyciem profesjonalnego tabletu graficznego oraz wirtualnej tablicy, na której uczeń widzi wszystkie obliczenia i rysunki w czasie rzeczywistym. Po każdej lekcji eksportuję całą tablicę do pliku PDF, dzięki czemu uczeń ma uporządkowane notatki do powtórki przed maturą."
+  },
+  {
+    question: "Kiedy najlepiej zapisać się na korepetycje?",
+    answer: "Najlepiej rezerwować miejsce przed rozpoczęciem roku szkolnego (czerwiec – sierpień). We wrześniu grafik stałych terminów zazwyczaj jest już w pełni zapełniony. W trakcie roku szkolnego prowadzę zapisy na listę rezerwową oraz pojedyncze konsultacje doraźne, jeśli zwolni się okienko."
+  },
+  {
+    question: "Czy potrzebuję własnego tabletu graficznego na lekcje online?",
+    answer: "Nie, wystarczy komputer lub tablet z mikrofonem i stabilnym łączem internetowym. Całość zapisów na współdzielonej tablicy prowadzę w przejrzysty sposób, a Ty możesz pisać myszką, na klawiaturze lub dyktować kolejne kroki rozwiązania."
+  },
+  {
+    question: "Czy pomagasz również uczniom z dużymi zaległościami?",
+    answer: "Tak. Moim celem jest tłumaczenie bez stresu i oceniania. Zaczynamy od fundamentów, budujemy pewność siebie na prostszych przykładach, a następnie przechodzimy do zadań typowo egzaminacyjnych CKE."
+  }
+];
+---
+
+<section id="faq" class="py-20 border-b border-white/[0.08]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-xs font-bold text-violet-400 tracking-wider uppercase mb-2">Masz pytania?</h2>
+      <p class="text-3xl font-extrabold text-white">Najczęściej zadawane pytania (FAQ)</p>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((item) => (
+        <details class="bento-card group rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-violet-500/30 transition-all">
+          <summary class="relative z-10 cursor-pointer p-5 sm:p-6 font-bold text-white text-sm sm:text-base flex items-center justify-between gap-4 select-none">
+            <span>{item.question}</span>
+            <span class="w-7 h-7 rounded-lg bg-white/[0.05] text-violet-400 flex items-center justify-center shrink-0 transition-transform duration-300 group-open:rotate-45 font-mono text-lg">
+              +
+            </span>
+          </summary>
+          <div class="relative z-10 px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-zinc-400 leading-relaxed border-t border-white/[0.04]">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
