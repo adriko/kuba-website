@@ -11,17 +11,17 @@ const levels = [
     <div class="text-center max-w-2xl mx-auto mb-14">
       <h2 class="text-xs font-bold text-violet-400 tracking-wider uppercase mb-2">Oferta zajęć</h2>
       <p class="text-3xl sm:text-4xl font-extrabold text-white">Co razem przerabiamy?</p>
-      <p class="text-zinc-400 text-sm mt-2">Dopasowuję tempo pracy do Twoich celów – od nadrabiania zaległości po celowanie w wynik powyżej 85% z matury.</p>
+      <p class="text-zinc-300 text-sm sm:text-base mt-2">Dopasowuję tempo pracy do Twoich celów – od nadrabiania zaległości po celowanie w wynik powyżej 85% z matury.</p>
     </div>
 
-    <!-- Poziomy edukacji -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+    <!-- Poziomy edukacji (usunięty font-mono, powiększone i wyraźniejsze teksty) -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
       {levels.map((lvl, idx) => (
-        <div class="bento-card p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/30 transition-all">
-          <div class="relative z-10">
-            <span class="text-[10px] font-mono uppercase tracking-wider text-violet-400 block mb-1">Poziom 0{idx + 1}</span>
-            <h3 class="font-bold text-white text-sm mb-1.5">{lvl.name}</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed">{lvl.desc}</p>
+        <div class="bento-card p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/30 transition-all flex flex-col justify-between">
+          <div class="relative z-10 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-violet-400 block">Poziom 0{idx + 1}</span>
+            <h3 class="font-bold text-white text-base">{lvl.name}</h3>
+            <p class="text-sm text-zinc-300 leading-relaxed">{lvl.desc}</p>
           </div>
         </div>
       ))}
@@ -39,13 +39,13 @@ const levels = [
             <span class="px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-semibold">80% zajęć</span>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Matematyka (Główny profil)</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
             Kompleksowe przygotowanie do matury podstawowej i rozszerzonej, egzaminu ósmoklasisty oraz bieżące nadrabianie zaległości szkolnych.
           </p>
-          <ul class="space-y-2.5 text-sm font-medium text-zinc-300">
-            <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Rozwiązywanie arkuszy maturalnych CKE krok po kroku</li>
-            <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Funkcje, geometria, ciągi, prawdopodobieństwo, rachunek różniczkowy</li>
-            <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Rozpracowywanie schematów i typowych pułapek egzaminatorów</li>
+          <ul class="space-y-2.5 text-sm sm:text-base font-medium text-zinc-200">
+            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Rozwiązywanie arkuszy maturalnych CKE krok po kroku</li>
+            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Funkcje, geometria, ciągi, prawdopodobieństwo, rachunek różniczkowy</li>
+            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Rozpracowywanie schematów i typowych pułapek egzaminatorów</li>
           </ul>
         </div>
       </div>
@@ -60,13 +60,13 @@ const levels = [
             <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">20% zajęć</span>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Fizyka</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
             Zrozumienie zjawisk fizycznych i przekładanie teorii na praktykę zadaniową. Pomoc w opanowaniu najtrudniejszych działów bez paniki.
           </p>
-          <ul class="space-y-2.5 text-sm font-medium text-zinc-300">
-            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Kinematyka, dynamika, praca, moc i zasady zachowania energii</li>
-            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Elektrostatyka, prąd stały, magnetyzm, drgania i optyka</li>
-            <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Nauka swobodnego przekształcania wzorów i rachunku jednostek</li>
+          <ul class="space-y-2.5 text-sm sm:text-base font-medium text-zinc-200">
+            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Kinematyka, dynamika, praca, moc i zasady zachowania energii</li>
+            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Elektrostatyka, prąd stały, magnetyzm, drgania i optyka</li>
+            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Nauka swobodnego przekształcania wzorów i rachunku jednostek</li>
           </ul>
         </div>
       </div>
@@ -79,7 +79,7 @@ const levels = [
           <span>📄</span> Materiały własne & Opracowania PDF
         </div>
         <h3 class="text-xl sm:text-2xl font-bold text-white">Autorskie pakiety zadań i pewniaki maturalne</h3>
-        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+        <p class="text-xs sm:text-sm sm:text-base text-zinc-300 leading-relaxed">
           Przygotowuję uporządkowane zestawy rozwiązanych zadań krok po kroku oraz ściągi ze wzorami, które odblokujesz błyskawicznie (np. przez BLIK) lub otrzymasz bezpłatnie jako mój stały uczeń.
         </p>
       </div>
@@ -94,7 +94,7 @@ const levels = [
           href="https://www.youtube.com/@lekcjeukuby" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-300 font-semibold text-xs text-center transition-colors"
+          class="px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-200 font-semibold text-xs text-center transition-colors"
         >
           Darmowe wideo na YT →
         </a>
