@@ -5,43 +5,27 @@
 }
 
 @layer base {
+  *, ::before, ::after {
+    font-family: var(--font-sans);
+  }
+
   html {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding-top: 5rem;
+    color-scheme: dark;
   }
 }
 
-/* Kursorowy Spotlight Glow – aktywny wyłącznie na urządzeniach z myszką/gładzikiem */
-.bento-card {
-  position: relative;
-  overflow: hidden;
+/* Subtelna geometryczna siatka techniczna/matematyczna w tle */
+.bg-math-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .bento-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      450px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
-      rgba(167, 139, 250, 0.16),
-      transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .bento-card:hover::before {
-    opacity: 1;
-  }
-}
-
-/* Ukrycie domyślnego trójkąta w elementach FAQ */
 details > summary {
   list-style: none;
 }

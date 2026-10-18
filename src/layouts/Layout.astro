@@ -45,7 +45,7 @@ const schemaData = {
 ---
 
 <!doctype html>
-<html lang="pl" class="scroll-smooth bg-[#08070b]">
+<html lang="pl" class="scroll-smooth bg-[#0d0e12]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,10 +53,10 @@ const schemaData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#08070b" />
+    <meta name="theme-color" content="#0d0e12" />
     <title>{title}</title>
 
-    <!-- Open Graph / Discord / Facebook / Messenger -->
+    <!-- Open Graph / Meta -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
@@ -64,40 +64,15 @@ const schemaData = {
     <meta property="og:image" content={`${canonicalURL}/kuba.png`} />
     <meta property="og:locale" content="pl_PL" />
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${canonicalURL}/kuba.png`} />
 
-    <!-- Dane strukturalne JSON-LD dla Google i AI Search -->
+    <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
-  <body class="bg-[#08070b] text-zinc-100 antialiased selection:bg-violet-500 selection:text-white min-h-screen relative overflow-x-hidden pb-20 md:pb-0">
-    <!-- Tło ze sferycznym światłem w stylu Darkrise -->
-    <div class="fixed inset-0 pointer-events-none z-0">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-violet-600/15 via-indigo-600/10 to-transparent blur-[120px]"></div>
-      <div class="absolute top-[800px] -left-40 w-[500px] h-[500px] bg-purple-600/10 blur-[140px]"></div>
-    </div>
-
-    <div class="relative z-10">
-      <slot />
-    </div>
-
-    <!-- Zoptymalizowany skrypt Spotlight (tylko dla wskazywanej karty i urządzeń z myszką) -->
-    <script>
-      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        const cards = document.querySelectorAll<HTMLElement>('.bento-card');
-        cards.forEach((card) => {
-          card.addEventListener('pointermove', (e: PointerEvent) => {
-            requestAnimationFrame(() => {
-              const rect = card.getBoundingClientRect();
-              card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-              card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-            });
-          });
-        });
-      }
-    </script>
+  <body class="bg-[#0d0e12] text-zinc-200 antialiased selection:bg-sky-500/30 selection:text-sky-200 min-h-screen">
+    <slot />
   </body>
 </html>

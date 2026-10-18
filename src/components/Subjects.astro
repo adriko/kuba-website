@@ -1,103 +1,123 @@
 ---
 const levels = [
-  { name: "Egzamin 8-klasisty", desc: "Powtórka działów, arkusze CKE i pewne punkty na starcie do liceum." },
-  { name: "Liceum & Technikum", desc: "Bieżące sprawdziany, kartkówki, nadrabianie zaległości i wyprowadzanie ocen." },
-  { name: "Matura Podstawowa", desc: "Opanowanie pewniaków maturalnych, praca z kartą wzorów i spokojne zdanie egzaminu." },
-  { name: "Matura Rozszerzona", desc: "Zadania dowodowe, optymalizacja, parametry i walka o wynik na studia techniczne." }
+  "Egzamin ósmoklasisty",
+  "Liceum & Technikum",
+  "Matura Podstawowa",
+  "Matura Rozszerzona"
 ];
 ---
-<section id="oferta" class="py-20 border-b border-white/[0.08]">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <h2 class="text-xs font-bold text-violet-400 tracking-wider uppercase mb-2">Oferta zajęć</h2>
-      <p class="text-3xl sm:text-4xl font-extrabold text-white">Co razem przerabiamy?</p>
-      <p class="text-zinc-300 text-sm sm:text-base mt-2">Dopasowuję tempo pracy do Twoich celów – od nadrabiania zaległości po celowanie w wynik powyżej 85% z matury.</p>
+<section id="zakres" class="py-16 border-b border-white/[0.08]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <div class="mb-8">
+      <span class="text-xs font-semibold uppercase tracking-wider text-sky-400 block mb-1">
+        Oferta edukacyjna
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Czym się zajmujemy?</h2>
+      <p class="text-zinc-300 text-sm mt-1 max-w-xl">
+        Dopasowuję poziom do Twojego celu – od wyprowadzania ocen ze sprawdzianów po przygotowanie pod klucz CKE na wymarzone studia techniczne.
+      </p>
+
+      <!-- Poziomy edukacyjne -->
+      <div class="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-white/[0.08]">
+        <span class="text-xs text-zinc-400 font-medium mr-1">Przygotowuję do:</span>
+        {levels.map((lvl) => (
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-zinc-200">
+            {lvl}
+          </span>
+        ))}
+      </div>
     </div>
 
-    <!-- Poziomy edukacji (usunięty font-mono, powiększone i wyraźniejsze teksty) -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-      {levels.map((lvl, idx) => (
-        <div class="bento-card p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/30 transition-all flex flex-col justify-between">
-          <div class="relative z-10 space-y-2">
-            <span class="text-xs font-bold uppercase tracking-wider text-violet-400 block">Poziom 0{idx + 1}</span>
-            <h3 class="font-bold text-white text-base">{lvl.name}</h3>
-            <p class="text-sm text-zinc-300 leading-relaxed">{lvl.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Główne karty przedmiotów -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Dwie równe, dopracowane kolumny STEM -->
+    <div class="grid md:grid-cols-2 gap-5 mb-8">
+      
       <!-- Matematyka -->
-      <div class="bento-card p-8 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] hover:border-violet-500/40 transition-all">
-        <div class="relative z-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center font-bold text-xl shadow-sm">
-              ∑
-            </div>
-            <span class="px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-semibold">80% zajęć</span>
+      <div class="p-6 rounded-2xl bg-zinc-900/60 border border-white/[0.08] flex flex-col justify-between hover:border-white/20 transition-colors">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-mono text-sm font-bold border border-sky-500/20">∑</span>
+              <span>Matematyka</span>
+            </h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20">
+              Główny profil
+            </span>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Matematyka (Główny profil)</h3>
-          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
-            Kompleksowe przygotowanie do matury podstawowej i rozszerzonej, egzaminu ósmoklasisty oraz bieżące nadrabianie zaległości szkolnych.
+
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            Kompleksowe przygotowanie pod schematy CKE, oswajanie zadań dowodowych oraz bieżąca pomoc przy sprawdzianach w szkole średniej.
           </p>
-          <ul class="space-y-2.5 text-sm sm:text-base font-medium text-zinc-200">
-            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Rozwiązywanie arkuszy maturalnych CKE krok po kroku</li>
-            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Funkcje, geometria, ciągi, prawdopodobieństwo, rachunek różniczkowy</li>
-            <li class="flex items-center gap-2.5"><span class="text-violet-400">✓</span> Rozpracowywanie schematów i typowych pułapek egzaminatorów</li>
+
+          <ul class="space-y-3 text-xs sm:text-sm text-zinc-300 pt-2">
+            <li class="flex items-start gap-2.5">
+              <span class="text-sky-400 font-mono text-sm leading-none mt-0.5 font-bold">f(x)</span>
+              <span>Rozwiązywanie arkuszy maturalnych CKE krok po kroku</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-sky-400 font-mono text-sm leading-none mt-0.5 font-bold">Δ</span>
+              <span>Funkcje, geometria, optymalizacja, ciągi i prawdopodobieństwo</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-sky-400 font-mono text-sm leading-none mt-0.5 font-bold">√</span>
+              <span>Sprawne i bezstresowe posługiwanie się oficjalną Kartą Wzorów CKE</span>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Fizyka -->
-      <div class="bento-card p-8 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] hover:border-indigo-500/40 transition-all">
-        <div class="relative z-10">
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xl shadow-sm">
-              ⚡
-            </div>
-            <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold">20% zajęć</span>
+      <div class="p-6 rounded-2xl bg-zinc-900/60 border border-white/[0.08] flex flex-col justify-between hover:border-white/20 transition-colors">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-mono text-sm font-bold border border-emerald-500/20">⚡</span>
+              <span>Fizyka</span>
+            </h3>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-white/[0.06] text-zinc-300 border border-white/10">
+              Profil uzupełniający
+            </span>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Fizyka</h3>
-          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
-            Zrozumienie zjawisk fizycznych i przekładanie teorii na praktykę zadaniową. Pomoc w opanowaniu najtrudniejszych działów bez paniki.
+
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            Zrozumienie praw fizyki bez mechanicznego uczenia się wzorów na pamięć. Prawidłowy rysunek, schematy i logika przekształceń jednostek.
           </p>
-          <ul class="space-y-2.5 text-sm sm:text-base font-medium text-zinc-200">
-            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Kinematyka, dynamika, praca, moc i zasady zachowania energii</li>
-            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Elektrostatyka, prąd stały, magnetyzm, drgania i optyka</li>
-            <li class="flex items-center gap-2.5"><span class="text-indigo-400">✓</span> Nauka swobodnego przekształcania wzorów i rachunku jednostek</li>
+
+          <ul class="space-y-3 text-xs sm:text-sm text-zinc-300 pt-2">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-mono text-sm leading-none mt-0.5 font-bold">F=ma</span>
+              <span>Kinematyka, dynamika, praca, moc i zasady zachowania energii</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-mono text-sm leading-none mt-0.5 font-bold">Ω</span>
+              <span>Obwody prądu stałego, magnetyzm, drgania, fale i optyka</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-mono text-sm leading-none mt-0.5 font-bold">[J]</span>
+              <span>Wyprowadzanie wzorów zjawiskowych i bezbłędny rachunek jednostek</span>
+            </li>
           </ul>
         </div>
       </div>
+
     </div>
 
-    <!-- Moduł pod Materiały Dodatkowe / Pakiety PDF (BLIK / Naffy) -->
-    <div id="arkusze" class="bento-card mt-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-violet-950/30 via-indigo-950/20 to-zinc-900/40 border border-violet-500/25 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div class="relative z-10 space-y-2 max-w-2xl">
-        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-violet-500/15 text-violet-300 text-[11px] font-bold uppercase tracking-wider">
-          <span>📄</span> Materiały własne & Opracowania PDF
-        </div>
-        <h3 class="text-xl sm:text-2xl font-bold text-white">Autorskie pakiety zadań i pewniaki maturalne</h3>
-        <p class="text-xs sm:text-sm sm:text-base text-zinc-300 leading-relaxed">
-          Przygotowuję uporządkowane zestawy rozwiązanych zadań krok po kroku oraz ściągi ze wzorami, które odblokujesz błyskawicznie (np. przez BLIK) lub otrzymasz bezpłatnie jako mój stały uczeń.
-        </p>
+    <!-- Moduł informacyjny: Zasady i Organizacja lekcji -->
+    <div class="p-5 sm:p-6 rounded-2xl bg-[#0d0e12] border border-white/[0.08] grid sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+      <div class="space-y-1">
+        <span class="text-zinc-400 font-medium block">Czas trwania zajęć</span>
+        <span class="text-white font-bold text-base block">60 lub 90 minut</span>
+        <p class="text-zinc-400 text-xs">Indywidualne tempo pracy dostosowane do ucznia.</p>
       </div>
-      <div class="relative z-10 flex flex-col sm:flex-row md:flex-col gap-2.5 w-full md:w-auto shrink-0">
-        <a 
-          href="#kontakt" 
-          class="px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs text-center transition-colors shadow-lg shadow-violet-600/20"
-        >
-          Zapytaj o materiały PDF
-        </a>
-        <a 
-          href="https://www.youtube.com/@lekcjeukuby" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-200 font-semibold text-xs text-center transition-colors"
-        >
-          Darmowe wideo na YT →
-        </a>
+      <div class="space-y-1 border-t sm:border-t-0 sm:border-l border-white/[0.08] sm:pl-4 pt-3 sm:pt-0">
+        <span class="text-zinc-400 font-medium block">Materiały po lekcji</span>
+        <span class="text-white font-bold text-base block">Pełne notatki w PDF</span>
+        <p class="text-zinc-400 text-xs">Wysyłane natychmiast po skończonej tablicy online.</p>
+      </div>
+      <div class="space-y-1 border-t sm:border-t-0 sm:border-l border-white/[0.08] sm:pl-4 pt-3 sm:pt-0">
+        <span class="text-zinc-400 font-medium block">Przejrzyste zasady</span>
+        <span class="text-white font-bold text-base block">Rozliczenie miesięczne</span>
+        <p class="text-zinc-400 text-xs">Płatność za odbyte lekcje, bez ukrytych opłat.</p>
       </div>
     </div>
 

@@ -1,111 +1,265 @@
 ---
 const email = "kontakt@jakubkorzen.pl";
+const phoneDisplay = "+48 510 170 804";
+const phoneRaw = "+48510170804";
+const whatsappUrl = "https://wa.me/48510170804";
+
+// Uporządkowane media społecznościowe – profile w przygotowaniu mają badge i są nieklikalne
+const socials = [
+  {
+    name: "YouTube",
+    desc: "@lekcjeukuby",
+    url: "https://www.youtube.com/@lekcjeukuby",
+    isActive: true
+  },
+  {
+    name: "Google Maps",
+    desc: "28 opinii (5.0★)",
+    url: "https://maps.app.goo.gl/bdKPyWNdRER2nRZ26",
+    isActive: true
+  },
+  {
+    name: "Instagram",
+    desc: "Rolki & tipy",
+    url: "#",
+    isActive: false,
+    badge: "Wkrótce"
+  },
+  {
+    name: "TikTok",
+    desc: "Szybkie triki",
+    url: "#",
+    isActive: false,
+    badge: "Wkrótce"
+  },
+  {
+    name: "Discord",
+    desc: "Społeczność",
+    url: "#",
+    isActive: false,
+    badge: "Wkrótce"
+  }
+];
 ---
-<section id="kontakt" class="py-20">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+<section id="kontakt" class="py-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
     
-    <div class="bento-card bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] hover:border-violet-500/30 transition-all rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
-      <!-- Ambient glow w rogu karty -->
-      <div class="absolute -right-20 -top-20 w-80 h-80 bg-violet-600/15 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="relative z-10 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-medium">
-          <span>ℹ️</span> Ważna informacja o zapisach
-        </div>
-
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-          Zapisy na lekcje i terminy
-        </h2>
-
-        <p class="text-zinc-300 leading-relaxed max-w-2xl text-base">
-          Wszystkie zapisy na zajęcia odbywają się bezpośrednio ze mną. Ze względu na duże zainteresowanie, <strong class="text-white">we wrześniu zazwyczaj nie ma już wolnych stałych terminów</strong> na dany rok szkolny.
+    <div class="p-6 sm:p-8 rounded-2xl bg-zinc-900/70 border border-white/[0.08] space-y-8 backdrop-blur-md shadow-2xl">
+      
+      <!-- Nagłówek i lokalizacja -->
+      <div class="space-y-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-sky-400 block">
+          Zapisy & Terminy
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Skontaktuj się w sprawie lekcji</h2>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+          Zadzwoń, napisz lub skorzystaj z poniższego szybkiego zapytania. Lekcje stacjonarne odbywają się w <strong class="text-white font-semibold">Muninie k. Jarosławia</strong>, a lekcje online prowadzę dla uczniów z całej Polski.
         </p>
+      </div>
 
-        <p class="text-zinc-400 leading-relaxed max-w-2xl text-sm">
-          Jeśli szukasz wsparcia, skontaktuj się ze mną jak najwcześniej – w miarę możliwości wpisuję chętnych na listę rezerwową lub proponuję pojedyncze konsultacje doraźne.
-        </p>
-
-        <div class="pt-4 grid sm:grid-cols-2 gap-4">
-          
-          <!-- Karta E-mail z funkcją kopiowania 1-klikiem -->
-          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.08] flex flex-col justify-between gap-4">
-            <div>
-              <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Kontakt bezpośredni</span>
-              <a href={`mailto:${email}`} class="font-bold text-lg text-white hover:text-violet-300 transition-colors block break-all">
-                {email}
-              </a>
-              <span class="text-xs text-zinc-400 mt-1 block">Odpowiadam zazwyczaj tego samego dnia</span>
-            </div>
-
-            <div class="flex items-center gap-2 pt-1">
-              <button 
-                id="copy-email-btn"
-                data-email={email}
-                type="button"
-                class="px-3.5 py-2 rounded-xl bg-violet-600/20 hover:bg-violet-600/30 border border-violet-500/30 text-violet-300 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5"
-              >
-                <span id="copy-email-text">📋 Skopiuj adres e-mail</span>
-              </button>
-              <a 
-                href={`mailto:${email}?subject=Zapytanie%20o%20korepetycje`}
-                class="px-3.5 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.08] text-white text-xs font-semibold transition-all"
-              >
-                Wyślij wiadomość →
-              </a>
-            </div>
+      <!-- Kafelki bezpośredniego kontaktu: Telefon / WhatsApp oraz E-mail -->
+      <div class="grid sm:grid-cols-2 gap-3.5">
+        
+        <!-- Telefon & WhatsApp -->
+        <div class="p-4 rounded-xl bg-[#0d0e12] border border-white/[0.08] flex flex-col justify-between gap-3">
+          <div>
+            <span class="text-xs font-medium text-zinc-400 uppercase tracking-wider block mb-1">Telefon / WhatsApp</span>
+            <a href={`tel:${phoneRaw}`} class="font-bold text-base sm:text-lg text-white hover:text-sky-300 transition-colors block">
+              {phoneDisplay}
+            </a>
           </div>
 
-          <!-- Karta Lokalizacji i Profilu Google -->
-          <div class="bg-white/[0.02] rounded-2xl p-5 border border-white/[0.08] flex flex-col justify-between gap-4">
-            <div>
-              <span class="text-xs text-zinc-400 font-semibold uppercase tracking-wider block mb-1">Forma & Opinie</span>
-              <span class="font-bold text-lg text-white block">Online & Stacjonarnie</span>
-              <span class="text-xs text-zinc-400 mt-1 block">Interaktywna tablica • Notatki PDF po lekcji</span>
-            </div>
+          <div class="flex items-center gap-2">
+            <a 
+              href={`tel:${phoneRaw}`}
+              class="px-3.5 py-1.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.14] border border-white/10 text-xs font-semibold text-zinc-200 transition-colors"
+            >
+              Zadzwoń
+            </a>
+            <a 
+              href={whatsappUrl}
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="px-3.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 text-xs font-bold transition-colors flex items-center gap-1.5"
+            >
+              <span>WhatsApp</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
 
-            <div class="pt-1">
+        <!-- E-mail -->
+        <div class="p-4 rounded-xl bg-[#0d0e12] border border-white/[0.08] flex flex-col justify-between gap-3">
+          <div>
+            <span class="text-xs font-medium text-zinc-400 uppercase tracking-wider block mb-1">Adres e-mail</span>
+            <a href={`mailto:${email}`} class="font-bold text-sm sm:text-base text-white hover:text-sky-300 transition-colors block truncate">
+              {email}
+            </a>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button 
+              id="copy-btn"
+              data-email={email}
+              type="button"
+              class="px-3.5 py-1.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.14] border border-white/10 text-xs font-semibold text-zinc-200 transition-colors cursor-pointer"
+            >
+              <span id="copy-btn-label">Kopiuj e-mail</span>
+            </button>
+            <a 
+              href={`mailto:${email}?subject=Zapytanie%20o%20korepetycje`}
+              class="px-3.5 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-bold transition-all"
+            >
+              Napisz wiadomość →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Szybki formularz kontaktowy (Alternatywa dla rodziców bez skonfigurowanego mailto) -->
+      <div class="p-5 rounded-xl bg-[#0d0e12] border border-white/[0.08] space-y-4">
+        <div>
+          <h3 class="text-sm font-bold text-white">Szybkie zapytanie o wolny termin</h3>
+          <p class="text-xs text-zinc-400">Wypełnij 3 pola – wiadomość zostanie przygotowana do natychmiastowego wysłania.</p>
+        </div>
+
+        <form id="quick-contact-form" class="space-y-3">
+          <div class="grid sm:grid-cols-2 gap-3">
+            <input 
+              type="text" 
+              id="form-name" 
+              placeholder="Imię ucznia lub rodzica" 
+              required
+              class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-white/10 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-sky-400"
+            />
+            <select 
+              id="form-subject"
+              class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-white/10 text-xs text-zinc-200 focus:outline-none focus:border-sky-400"
+            >
+              <option value="Matematyka – Matura Rozszerzona">Matematyka – Matura Rozszerzona</option>
+              <option value="Matematyka – Matura Podstawowa">Matematyka – Matura Podstawowa</option>
+              <option value="Matematyka – Szkoła Średnia">Matematyka – Szkoła Średnia</option>
+              <option value="Matematyka – Egzamin 8-klasisty">Matematyka – Egzamin 8-klasisty</option>
+              <option value="Fizyka – Bieżący materiał">Fizyka – Bieżący materiał</option>
+              <option value="Inne / Konsultacja">Inne / Konsultacja doraźna</option>
+            </select>
+          </div>
+
+          <textarea 
+            id="form-message" 
+            rows="2" 
+            placeholder="Dodatkowe informacje (np. preferowane godziny, forma online czy Munina)..."
+            class="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-white/10 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-sky-400 resize-none"
+          ></textarea>
+
+          <button 
+            type="submit" 
+            class="w-full py-2.5 px-4 rounded-lg bg-sky-500 hover:bg-sky-400 text-zinc-950 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+          >
+            <span>Generuj i wyślij zgłoszenie</span>
+            <span>→</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Moduł Social Media -->
+      <div class="pt-4 border-t border-white/[0.08] space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-zinc-300">Materiały wideo, darmowe porady i profile</span>
+          <span class="text-xs text-zinc-400 hidden sm:inline">Ucz się ze mną w sieci</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          {socials.map((item) => (
+            item.isActive ? (
               <a 
-                href="https://maps.app.goo.gl/bdKPyWNdRER2nRZ26"
+                href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/25 text-amber-300 text-xs font-bold transition-all"
+                class="p-2.5 rounded-xl bg-[#0d0e12] border border-white/[0.08] hover:border-white/20 transition-all flex flex-col justify-between group"
               >
-                <span>★ Profil i opinie w Google Maps</span>
-                <span>→</span>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-xs font-bold text-zinc-200 group-hover:text-white transition-colors">
+                    {item.name}
+                  </span>
+                  <span class="text-zinc-400 group-hover:text-zinc-200 transition-colors text-xs">↗</span>
+                </div>
+                <span class="text-xs text-zinc-400 leading-tight block">
+                  {item.desc}
+                </span>
               </a>
-            </div>
-          </div>
-
+            ) : (
+              <div class="p-2.5 rounded-xl bg-[#0d0e12]/50 border border-white/[0.04] flex flex-col justify-between opacity-60 cursor-default">
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-xs font-medium text-zinc-400">
+                    {item.name}
+                  </span>
+                  <span class="text-[10px] px-1.5 py-0.2 rounded bg-white/[0.06] text-zinc-400">
+                    {item.badge}
+                  </span>
+                </div>
+                <span class="text-xs text-zinc-500 leading-tight block">
+                  {item.desc}
+                </span>
+              </div>
+            )
+          ))}
         </div>
+      </div>
+
+      <!-- Dolna belka z lokalizacją -->
+      <div class="pt-4 flex items-center justify-between gap-3 text-xs text-zinc-400 border-t border-white/[0.08]">
+        <div class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Stacjonarnie: <strong class="text-zinc-200 font-semibold">Munina k. Jarosławia</strong></span>
+        </div>
+        <span class="text-zinc-400 text-xs">Online: cała Polska</span>
       </div>
 
     </div>
 
     <!-- Stopka -->
-    <footer class="mt-12 text-center text-xs text-zinc-500 space-y-2">
-      <p>© {new Date().getFullYear()} Jakub Korzeń (jakubkorzen.pl). Wszystkie prawa zastrzeżone.</p>
+    <footer class="mt-12 text-center text-xs text-zinc-500">
+      <p>© {new Date().getFullYear()} Jakub Korzeń. Wszystkie prawa zastrzeżone.</p>
     </footer>
+
   </div>
 </section>
 
 <script>
-  const copyBtn = document.getElementById('copy-email-btn');
-  const copyText = document.getElementById('copy-email-text');
+  // Kopiowanie adresu e-mail
+  const btn = document.getElementById('copy-btn');
+  const label = document.getElementById('copy-btn-label');
 
-  if (copyBtn && copyText) {
-    copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.getAttribute('data-email') || 'kontakt@jakubkorzen.pl';
+  if (btn && label) {
+    btn.addEventListener('click', async () => {
+      const email = btn.getAttribute('data-email') || 'kontakt@jakubkorzen.pl';
       try {
         await navigator.clipboard.writeText(email);
-        copyText.textContent = '✓ Skopiowano do schowka!';
-        copyBtn.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border-emerald-500/40');
+        label.textContent = '✓ Skopiowano';
         setTimeout(() => {
-          copyText.textContent = '📋 Skopiuj adres e-mail';
-          copyBtn.classList.remove('bg-emerald-500/20', 'text-emerald-300', 'border-emerald-500/40');
-        }, 2500);
+          label.textContent = 'Kopiuj e-mail';
+        }, 2000);
       } catch {
         window.location.href = `mailto:${email}`;
       }
+    });
+  }
+
+  // Obsługa formularza szybkiego kontaktu
+  const form = document.getElementById('quick-contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('form-name') as HTMLInputElement)?.value || '';
+      const subject = (document.getElementById('form-subject') as HTMLSelectElement)?.value || '';
+      const message = (document.getElementById('form-message') as HTMLTextAreaElement)?.value || '';
+      
+      const body = `Dzień dobry Panie Jakubie,\n\nZgłaszam się w sprawie korepetycji:\n- Imię: ${name}\n- Poziom / Zakres: ${subject}\n- Dodatkowe informacje: ${message}\n\nProszę o informację o dostępnych terminach.`;
+      const mailtoUrl = `mailto:kontakt@jakubkorzen.pl?subject=${encodeURIComponent(`Zapytanie o korepetycje: ${subject} (${name})`)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoUrl;
     });
   }
 </script>

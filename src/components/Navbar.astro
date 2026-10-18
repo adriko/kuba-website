@@ -1,51 +1,45 @@
 ---
 ---
-<!-- Główna belka nawigacji (Bez zbędnej górnej belki, pełna czytelność na PC i Mobile) -->
-<header class="sticky top-0 z-50 bg-[#08070b]/90 backdrop-blur-xl border-b border-white/[0.08]">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+<header class="sticky top-0 z-40 bg-[#0d0e12]/95 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     
-    <!-- Logo JK -->
+    <!-- Logo i nazwisko -->
     <a href="#" class="flex items-center gap-3 group">
-      <div class="relative">
-        <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl blur opacity-40 group-hover:opacity-75 transition duration-300"></div>
-        <span class="relative w-10 h-10 rounded-xl bg-zinc-900 border border-white/15 text-white font-extrabold flex items-center justify-center text-base shadow-md">
-          JK
-        </span>
-      </div>
-      <div class="flex flex-col leading-tight">
-        <span class="font-extrabold text-white text-base tracking-tight">Jakub Korzeń</span>
-        <span class="text-xs text-zinc-300 font-medium">Lekcje u Kuby</span>
+      <span class="w-9 h-9 rounded-xl bg-zinc-800 border border-white/15 text-white font-bold flex items-center justify-center text-xs tracking-tight group-hover:border-white/30 transition-colors shadow-sm">
+        JK
+      </span>
+      <div class="flex items-baseline gap-1.5">
+        <span class="font-bold text-[15px] text-white tracking-tight leading-none">Jakub Korzeń</span>
+        <span class="text-xs text-zinc-400 font-normal leading-none hidden sm:inline">/ Lekcje u Kuby</span>
       </div>
     </a>
 
-    <!-- Menu nawigacji (Desktop - wyraźniejsza czcionka i jaśniejszy kolor) -->
-    <nav aria-label="Główna nawigacja" class="hidden md:flex items-center gap-8 text-base font-semibold text-zinc-200">
-      <a href="#o-mnie" class="hover:text-violet-400 transition-colors">O mnie</a>
-      <a href="#oferta" class="hover:text-violet-400 transition-colors">Oferta</a>
-      <a href="#arkusze" class="hover:text-violet-400 transition-colors">Arkusze PDF</a>
-      <a href="#opinie" class="hover:text-violet-400 transition-colors">Opinie (5.0★)</a>
-      <a href="#faq" class="hover:text-violet-400 transition-colors">FAQ</a>
-      <a href="#kontakt" class="hover:text-violet-400 transition-colors">Kontakt</a>
+    <!-- Menu Desktop (większa, wyraźna czcionka i lepszy kontrast) -->
+    <nav aria-label="Główna nawigacja" class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+      <a href="#o-zajeciach" class="hover:text-white transition-colors">O zajęciach</a>
+      <a href="#zakres" class="hover:text-white transition-colors">Zakres</a>
+      <a href="#opinie" class="hover:text-white transition-colors">Opinie</a>
+      <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
     </nav>
 
-    <!-- Przycisk Zapisz się (Desktop) i Przycisk Hamburger (Mobile) -->
+    <!-- Przycisk Desktop & Hamburger Mobile -->
     <div class="flex items-center gap-3">
       <a 
         href="#kontakt" 
-        class="hidden sm:inline-flex px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 rounded-xl transition-all shadow-lg shadow-violet-600/30"
+        class="hidden md:inline-flex px-4 py-2 text-xs font-bold text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all shadow-sm"
       >
-        Zapisz się
+        Kontakt i zapisy
       </a>
 
-      <!-- Przycisk Menu Mobilnego (Hamburger) -->
+      <!-- Przycisk otwierający wysuwane menu -->
       <button 
-        id="menu-btn" 
+        id="menu-open-btn" 
         type="button" 
-        aria-label="Otwórz menu" 
-        class="md:hidden w-10 h-10 rounded-xl bg-white/[0.06] border border-white/10 text-white flex items-center justify-center focus:outline-none"
+        aria-label="Otwórz menu nawigacji" 
+        class="md:hidden p-2 rounded-lg bg-zinc-900 border border-white/10 text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors"
       >
-        <svg id="menu-icon" width="20" height="20" class="fill-current" viewBox="0 0 24 24">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
@@ -53,32 +47,93 @@
   </div>
 </header>
 
-<!-- Wysuwane menu mobilne z boku/góry (Mobile Drawer) -->
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-[#08070b]/95 backdrop-blur-2xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center px-8 space-y-6 text-xl font-bold text-zinc-200">
-  <a href="#o-mnie" class="mobile-link hover:text-violet-400 transition-colors border-b border-white/[0.06] pb-4">O mnie</a>
-  <a href="#oferta" class="mobile-link hover:text-violet-400 transition-colors border-b border-white/[0.06] pb-4">Oferta</a>
-  <a href="#arkusze" class="mobile-link hover:text-violet-400 transition-colors border-b border-white/[0.06] pb-4">Arkusze PDF</a>
-  <a href="#opinie" class="mobile-link hover:text-violet-400 transition-colors border-b border-white/[0.06] pb-4">Opinie (5.0★)</a>
-  <a href="#faq" class="mobile-link hover:text-violet-400 transition-colors border-b border-white/[0.06] pb-4">FAQ</a>
-  <a href="#kontakt" class="mobile-link text-violet-400 pb-4">Kontakt & Zapisy →</a>
-</div>
+<!-- Tło przyciemniające (Backdrop) dla menu mobilnego -->
+<div 
+  id="drawer-backdrop" 
+  class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+></div>
+
+<!-- Wysuwany z boku panel mobilny (Off-canvas Drawer) -->
+<aside 
+  id="drawer-panel" 
+  class="fixed top-0 right-0 bottom-0 w-[280px] bg-[#111216] border-l border-white/10 p-6 z-50 flex flex-col justify-between translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl"
+>
+  <div>
+    <!-- Górny nagłówek szuflady z przyciskiem zamknięcia -->
+    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+      <div class="flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-zinc-800 border border-white/15 text-white font-bold flex items-center justify-center text-xs">
+          JK
+        </span>
+        <span class="text-sm font-bold text-white">Nawigacja</span>
+      </div>
+      <button 
+        id="menu-close-btn" 
+        type="button" 
+        aria-label="Zamknij menu" 
+        class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+      >
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Linki nawigacyjne w menu bocznym -->
+    <nav class="flex flex-col gap-4 mt-6 text-base font-semibold text-zinc-300">
+      <a href="#o-zajeciach" class="drawer-link hover:text-white transition-colors py-1">O zajęciach</a>
+      <a href="#zakres" class="drawer-link hover:text-white transition-colors py-1">Zakres materiału</a>
+      <a href="#opinie" class="drawer-link hover:text-white transition-colors py-1">Opinie uczniów</a>
+      <a href="#faq" class="drawer-link hover:text-white transition-colors py-1">Częste pytania (FAQ)</a>
+    </nav>
+  </div>
+
+  <!-- Dolna część szuflady -->
+  <div class="space-y-3 pt-6 border-t border-white/10">
+    <a 
+      href="#kontakt" 
+      class="drawer-link block w-full py-2.5 px-4 text-center text-xs font-bold text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all"
+    >
+      Kontakt i zapisy
+    </a>
+    <a 
+      href="https://www.youtube.com/@lekcjeukuby" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="block text-center text-xs text-zinc-400 hover:text-zinc-200 py-1 transition-colors"
+    >
+      YouTube: @lekcjeukuby ↗
+    </a>
+  </div>
+</aside>
 
 <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const openBtn = document.getElementById('menu-open-btn');
+  const closeBtn = document.getElementById('menu-close-btn');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const panel = document.getElementById('drawer-panel');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
-  function toggleMenu() {
-    if (mobileMenu) {
-      mobileMenu.classList.toggle('translate-x-full');
-      document.body.classList.toggle('overflow-hidden');
+  function openDrawer() {
+    if (backdrop && panel) {
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      panel.classList.remove('translate-x-full');
+      document.body.classList.add('overflow-hidden');
     }
   }
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', toggleMenu);
-    });
+  function closeDrawer() {
+    if (backdrop && panel) {
+      backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      panel.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
   }
+
+  openBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 </script>
