@@ -1,4 +1,7 @@
 ---
+const phoneRaw = "+48510170804";
+const phoneDisplay = "+48 510 170 804";
+const whatsappUrl = "https://wa.me/48510170804";
 ---
 <header class="sticky top-0 z-40 bg-[#0d0e12]/95 backdrop-blur-md border-b border-white/10">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -14,7 +17,7 @@
       </div>
     </a>
 
-    <!-- Menu Desktop (większa, wyraźna czcionka i lepszy kontrast) -->
+    <!-- Menu Desktop -->
     <nav aria-label="Główna nawigacja" class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
       <a href="#o-zajeciach" class="hover:text-white transition-colors">O zajęciach</a>
       <a href="#zakres" class="hover:text-white transition-colors">Zakres</a>
@@ -31,12 +34,12 @@
         Kontakt i zapisy
       </a>
 
-      <!-- Przycisk otwierający wysuwane menu -->
+      <!-- Przycisk otwierający menu mobilne -->
       <button 
         id="menu-open-btn" 
         type="button" 
         aria-label="Otwórz menu nawigacji" 
-        class="md:hidden p-2 rounded-lg bg-zinc-900 border border-white/10 text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors"
+        class="md:hidden p-2 rounded-xl bg-zinc-900/90 border border-white/10 text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
       >
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -47,31 +50,34 @@
   </div>
 </header>
 
-<!-- Tło przyciemniające (Backdrop) dla menu mobilnego -->
+<!-- Tło przyciemniające (Backdrop) -->
 <div 
   id="drawer-backdrop" 
-  class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+  class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
 ></div>
 
-<!-- Wysuwany z boku panel mobilny (Off-canvas Drawer) -->
+<!-- Wysuwany z boku panel mobilny (Nowoczesny Hub Mobilny) -->
 <aside 
   id="drawer-panel" 
-  class="fixed top-0 right-0 bottom-0 w-[280px] bg-[#111216] border-l border-white/10 p-6 z-50 flex flex-col justify-between translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl"
+  class="fixed top-0 right-0 bottom-0 w-[310px] max-w-[85vw] bg-[#111216] border-l border-white/10 p-5 z-50 flex flex-col justify-between translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl overflow-y-auto"
 >
-  <div>
-    <!-- Górny nagłówek szuflady z przyciskiem zamknięcia -->
-    <div class="flex items-center justify-between pb-4 border-b border-white/10">
-      <div class="flex items-center gap-2">
-        <span class="w-7 h-7 rounded-lg bg-zinc-800 border border-white/15 text-white font-bold flex items-center justify-center text-xs">
+  <div class="space-y-6">
+    <!-- Górny pasek szuflady -->
+    <div class="flex items-center justify-between pb-3.5 border-b border-white/10">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-zinc-800 border border-white/15 text-white font-bold flex items-center justify-center text-xs">
           JK
         </span>
-        <span class="text-sm font-bold text-white">Nawigacja</span>
+        <div>
+          <span class="text-xs font-bold text-white block leading-tight">Jakub Korzeń</span>
+          <span class="text-[10px] text-zinc-400 block leading-tight">Lekcje u Kuby • Munina / Online</span>
+        </div>
       </div>
       <button 
         id="menu-close-btn" 
         type="button" 
         aria-label="Zamknij menu" 
-        class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+        class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
       >
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -79,30 +85,88 @@
       </button>
     </div>
 
-    <!-- Linki nawigacyjne w menu bocznym -->
-    <nav class="flex flex-col gap-4 mt-6 text-base font-semibold text-zinc-300">
-      <a href="#o-zajeciach" class="drawer-link hover:text-white transition-colors py-1">O zajęciach</a>
-      <a href="#zakres" class="drawer-link hover:text-white transition-colors py-1">Zakres materiału</a>
-      <a href="#opinie" class="drawer-link hover:text-white transition-colors py-1">Opinie uczniów</a>
-      <a href="#faq" class="drawer-link hover:text-white transition-colors py-1">Częste pytania (FAQ)</a>
+    <!-- Linki nawigacyjne w formie eleganckich kafelków z ikonami -->
+    <nav class="space-y-1.5">
+      <span class="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider block mb-2 px-1">Menu główne</span>
+
+      <a href="#o-zajeciach" class="drawer-link flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] text-xs font-semibold text-zinc-200 hover:text-white transition-all group">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-400 group-hover:text-sky-400 transition-colors">👨‍🏫</span>
+          <span>O zajęciach</span>
+        </span>
+        <span class="text-zinc-400 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all text-xs">→</span>
+      </a>
+
+      <a href="#zakres" class="drawer-link flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] text-xs font-semibold text-zinc-200 hover:text-white transition-all group">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-400 group-hover:text-sky-400 transition-colors">📐</span>
+          <span>Zakres materiału</span>
+        </span>
+        <span class="text-zinc-400 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all text-xs">→</span>
+      </a>
+
+      <a href="#opinie" class="drawer-link flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] text-xs font-semibold text-zinc-200 hover:text-white transition-all group">
+        <span class="flex items-center gap-2.5">
+          <span class="text-amber-400">★</span>
+          <span>Opinie uczniów</span>
+        </span>
+        <span class="text-zinc-400 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all text-xs">→</span>
+      </a>
+
+      <a href="#faq" class="drawer-link flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.05] text-xs font-semibold text-zinc-200 hover:text-white transition-all group">
+        <span class="flex items-center gap-2.5">
+          <span class="text-zinc-400 group-hover:text-sky-400 transition-colors">💬</span>
+          <span>Częste pytania (FAQ)</span>
+        </span>
+        <span class="text-zinc-400 group-hover:text-zinc-300 group-hover:translate-x-0.5 transition-all text-xs">→</span>
+      </a>
     </nav>
+
+    <!-- Szybki hub kontaktu bezpośredniego w menu (Wypełnienie pustej przestrzeni) -->
+    <div class="p-3 rounded-xl bg-zinc-900/80 border border-white/[0.08] space-y-2.5">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">Szybki kontakt</span>
+        <span class="text-[10px] text-emerald-400 font-medium">● Wolne terminy</span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <a 
+          href={`tel:${phoneRaw}`}
+          class="py-2 px-2.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-center text-xs font-semibold text-zinc-200 flex items-center justify-center gap-1.5 transition-colors"
+        >
+          <span>📞</span>
+          <span>Zadzwoń</span>
+        </a>
+        <a 
+          href={whatsappUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="py-2 px-2.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-center text-xs font-bold text-emerald-300 flex items-center justify-center gap-1.5 transition-colors"
+        >
+          <span>WhatsApp</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- Dolna część szuflady -->
-  <div class="space-y-3 pt-6 border-t border-white/10">
+  <div class="space-y-2.5 pt-4 border-t border-white/10">
     <a 
       href="#kontakt" 
-      class="drawer-link block w-full py-2.5 px-4 text-center text-xs font-bold text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all"
+      class="drawer-link block w-full py-2.5 px-4 text-center text-xs font-bold text-zinc-950 bg-white hover:bg-zinc-100 rounded-lg transition-all shadow-md active:scale-95"
     >
-      Kontakt i zapisy
+      Przejdź do formularza zapisów
     </a>
+
     <a 
       href="https://www.youtube.com/@lekcjeukuby" 
       target="_blank" 
       rel="noopener noreferrer" 
-      class="block text-center text-xs text-zinc-400 hover:text-zinc-200 py-1 transition-colors"
+      class="flex items-center justify-center gap-1.5 text-center text-xs text-zinc-400 hover:text-zinc-200 py-1 transition-colors"
     >
-      YouTube: @lekcjeukuby ↗
+      <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <span>Kanał YouTube @lekcjeukuby ↗</span>
     </a>
   </div>
 </aside>
